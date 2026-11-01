@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <title>Anime — Kaiji Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">A</span> ANIME<span class="brand-dot">.</span></a>
+    <nav><a class="active" href="#catalog">Discover</a><a href="#episodes">Episodes</a></nav>
+    <label class="search-wrap" aria-label="Search anime"><span>⌕</span><input id="search" type="search" placeholder="Search anime..." autocomplete="off"></label>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">YOUR ANIME LIBRARY</p>
+        <h1>Find your next<br><span>obsession.</span></h1>
+        <p class="hero-copy">Explore your anime list, choose a season and episode, and watch right here.</p>
+        <a class="hero-button" href="#catalog">Browse anime <span>↗</span></a>
+      </div>
+      <div class="hero-art" aria-label="Abstract dark red anime-inspired artwork">
+        <div class="art-ring"></div><div class="art-glow"></div>
+        <div class="art-text">アニメ</div><div class="art-caption">ANIME COLLECTION / 001</div>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COLLECTION</p><h2>Anime list</h2></div>
+        <div class="filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="psychological">Psychological</button>
+          <button class="filter" data-filter="thriller">Thriller</button>
+        </div>
+      </div>
+      <div class="anime-grid" id="animeGrid">
+        <article class="anime-card" data-title="Kaiji Ultimate Survivor" data-tags="psychological thriller">
+          <div class="poster kaiji-poster">
+            <div class="poster-number">01</div><div class="poster-kanji">賭</div>
+            <div class="poster-title">KAIJI</div><div class="poster-subtitle">ULTIMATE SURVIVOR</div>
+            <span class="poster-badge">SEASON 1</span>
+          </div>
+          <div class="card-info"><div><h3>Kaiji: Ultimate Survivor</h3><p>Psychological · Thriller</p></div><span class="year">2007</span></div>
+          <button class="details-button" data-season="1">View episodes <span>↗</span></button>
+        </article>
+        <article class="anime-card" data-title="Kaiji Against All Rules" data-tags="psychological thriller">
+          <div class="poster kaiji2-poster">
+            <div class="poster-number">02</div><div class="poster-kanji">逆</div>
+            <div class="poster-title">KAIJI</div><div class="poster-subtitle">AGAINST ALL RULES</div>
+            <span class="poster-badge">SEASON 2</span>
+          </div>
+          <div class="card-info"><div><h3>Kaiji: Against All Rules</h3><p>Psychological · Thriller</p></div><span class="year">2011</span></div>
+          <button class="details-button" data-season="2">View episodes <span>↗</span></button>
+        </article>
+      </div>
+      <p class="empty-state" id="emptyState" hidden>No anime match your search.</p>
+    </section>
+
+    <section class="episode-section" id="episodes">
+      <div class="section-heading">
+        <div><p class="eyebrow">SELECT AN EPISODE</p><h2 id="seasonHeading">Kaiji: Ultimate Survivor</h2></div>
+        <div class="season-switch">
+          <button class="filter active" data-season="1">Season 1</button>
+          <button class="filter" data-season="2">Season 2</button>
+        </div>
+      </div>
+      <div class="episode-layout">
+        <div class="episode-list-panel">
+          <div class="episode-list-heading"><span id="episodeCount">26 episodes</span><span class="small-label">Choose an episode</span></div>
+          <div id="episodeList" class="episode-list"></div>
+        </div>
+        <div class="player-panel">
+          <div class="player-header"><div><p class="eyebrow" id="playerSeasonLabel">SEASON 1</p><h3 id="selectedEpisodeTitle">Episode 1</h3></div><span class="player-tag" id="playerTag">NO SOURCE</span></div>
+          <div class="player-frame" id="playerFrame">
+            <video id="video" controls playsinline preload="metadata" hidden></video>
+            <iframe id="embedFrame" hidden allow="fullscreen; autoplay; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <div class="player-placeholder" id="placeholder">
+              <div class="play-symbol">▶</div>
+              <p id="placeholderText">Choose an episode to start watching.</p>
+              <code id="placeholderPath" hidden></code>
+            </div>
+          </div>
+          <div class="player-controls">
+            <button class="secondary-button" id="prevEp" type="button">‹ Prev</button>
+            <button class="secondary-button" id="skipIntro" type="button">Skip 85s</button>
+            <button class="secondary-button" id="nextEp" type="button">Next ›</button>
+            <label class="autonext"><input type="checkbox" id="autoNext" checked> Auto-play next</label>
+          </div>
+          <p class="shortcut-hint">Space play/pause · ← → ±10s · N / P next / previous · F fullscreen · M mute</p>
+
+          <details class="source-override" id="sourceOverride">
+            <summary>Use a different source for this episode</summary>
+            <label class="url-label" for="playerUrl">Video file or embed URL</label>
+            <div class="url-row"><input id="playerUrl" type="url" placeholder="https://… .mp4 / .webm / .m3u8, or an embeddable player page"><button id="loadPlayer" type="button">Load</button></div>
+            <p class="player-help">Saved in this browser for the selected episode only. Direct video links play in the built-in player; other links load as an embedded player (the provider must allow embedding). Only use sources you have permission to use.</p>
+            <div class="player-actions"><button class="secondary-button" id="clearPlayer" type="button">Reset to default source</button><span id="playerStatus" aria-live="polite"></span></div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>ANIME<span class="brand-dot">.</span></span><span>Personal anime library UI</span></footer>
+  <script src="episodes.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

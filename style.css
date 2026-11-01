@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#101114;--panel:#19171c;--muted:#a6a1ad;--text:#f7f4fa;--accent:#ed334b;--line:#302d35}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.topbar{height:76px;padding:0 6vw;display:flex;align-items:center;gap:44px;border-bottom:1px solid var(--line);background:#101114}
+.brand{font:700 20px 'Space Grotesk',sans-serif;letter-spacing:1.2px;white-space:nowrap}
+.brand-mark{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:9px;background:var(--accent);border-radius:8px;font-size:16px}
+.brand-dot{color:var(--accent)}
+nav{display:flex;gap:28px;color:#a8a3ad;font-size:14px}
+nav a.active,nav a:hover{color:#fff}
+.search-wrap{margin-left:auto;display:flex;align-items:center;gap:10px;background:#201e24;border:1px solid #302d35;border-radius:10px;padding:0 14px;height:40px;color:#aaa}
+.search-wrap input{width:180px;background:transparent;border:0;outline:0;color:white}
+main{max-width:1400px;margin:auto;padding:0 6vw}
+.hero{min-height:390px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:36px;padding:56px 0 64px}
+.eyebrow{font-size:11px;letter-spacing:2.5px;font-weight:700;color:var(--accent);margin:0 0 15px}
+h1,h2,h3,p{margin-top:0}
+h1{font:700 clamp(42px,5.2vw,72px)/1.02 'Space Grotesk',sans-serif;letter-spacing:-2.5px;margin-bottom:20px}
+h1 span{color:var(--accent)}
+.hero-copy{color:var(--muted);font-size:16px;margin-bottom:27px}
+.hero-button{display:inline-flex;align-items:center;gap:28px;background:var(--accent);padding:13px 18px;border-radius:9px;font-weight:700;font-size:14px}
+.hero-art{height:270px;position:relative;overflow:hidden;border:1px solid #4a202a;border-radius:18px;background:radial-gradient(ellipse at 60% 45%,#9d1830 0,#4a101e 30%,#1c1117 67%,#151318 100%)}
+.art-ring{position:absolute;width:330px;height:330px;border:1px solid #ff526b55;border-radius:50%;top:-30px;left:25%;box-shadow:0 0 0 30px #ed334b0b,0 0 0 60px #ed334b08}
+.art-glow{position:absolute;width:220px;height:360px;transform:rotate(25deg);background:linear-gradient(90deg,transparent,#ed334b33,transparent);left:35%;top:-40px}
+.art-text{position:absolute;right:12%;top:14%;font-size:clamp(70px,10vw,130px);font-weight:700;color:#ffffff12;writing-mode:vertical-rl}
+.art-caption{position:absolute;bottom:20px;left:22px;font-size:10px;letter-spacing:2px;color:#d9aab2}
+.catalog,.episode-section{padding:15px 0 70px}
+.section-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:27px}
+h2{font:600 32px 'Space Grotesk',sans-serif;letter-spacing:-.8px;margin-bottom:0}
+.filters,.season-switch{display:flex;gap:8px;flex-wrap:wrap}
+.filter{border:1px solid var(--line);background:transparent;color:#aaa4af;padding:9px 14px;border-radius:8px;font:500 12px 'DM Sans',sans-serif;cursor:pointer}
+.filter.active,.filter:hover{background:#ed334b18;border-color:#ed334b;color:#fff}
+.anime-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.anime-card{background:var(--panel);border:1px solid #29262e;border-radius:14px;padding:12px;transition:transform .2s,border-color .2s}
+.anime-card:hover{transform:translateY(-4px);border-color:#51404a}
+.poster{height:270px;border-radius:9px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:22px}
+.kaiji-poster{background:linear-gradient(155deg,#17151a 0%,#40121d 47%,#a51d35 100%)}
+.kaiji-poster:before{content:'';position:absolute;width:230px;height:340px;right:-70px;top:-45px;transform:rotate(28deg);border:22px solid #e72b4822;background:linear-gradient(120deg,transparent,#ff334b25,transparent)}
+.kaiji2-poster{background:linear-gradient(150deg,#13151a,#202c39 48%,#087a87)}
+.kaiji2-poster:before{content:'';position:absolute;width:280px;height:280px;border:1px solid #75dce455;border-radius:50%;right:-100px;top:-50px;box-shadow:0 0 0 35px #75dce40a,0 0 0 70px #75dce408}
+.poster-number{position:absolute;top:16px;left:18px;font-size:11px;color:#ffffff88;letter-spacing:2px}
+.poster-kanji{position:absolute;right:22px;top:10px;font-size:105px;font-weight:700;color:#ffffff14}
+.poster-title{font:700 48px 'Space Grotesk',sans-serif;letter-spacing:5px;position:relative}
+.poster-subtitle{font-size:10px;letter-spacing:3px;color:#ffffffb3;position:relative}
+.poster-badge{position:absolute;top:18px;right:16px;background:#ffffff18;border:1px solid #ffffff35;border-radius:5px;padding:6px 8px;font-size:9px;letter-spacing:1px}
+.card-info{display:flex;justify-content:space-between;gap:10px;align-items:start;padding:17px 4px 13px}
+.card-info h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.card-info p{font-size:12px;color:var(--muted);margin-bottom:0}
+.year{font-size:11px;color:#aaa;white-space:nowrap}
+.details-button{display:flex;justify-content:space-between;width:100%;padding:11px 13px;background:#242129;border:1px solid #34313a;border-radius:8px;color:#f7f4fa;font:600 12px 'DM Sans',sans-serif;cursor:pointer}
+.details-button:hover{border-color:var(--accent)}
+.episode-section{border-top:1px solid var(--line);padding-top:55px}
+.episode-layout{display:grid;grid-template-columns:minmax(220px,.75fr) minmax(0,1.6fr);gap:20px}
+.episode-list-panel,.player-panel{background:var(--panel);border:1px solid #29262e;border-radius:13px;padding:18px;min-width:0}
+.episode-list-heading{display:flex;justify-content:space-between;gap:8px;color:#fff;font-size:13px;font-weight:700;padding:0 2px 15px}
+.small-label{font-size:10px;color:var(--muted);font-weight:400}
+.episode-list{display:grid;grid-template-columns:1fr;gap:7px;max-height:520px;overflow-y:auto;padding-right:3px}
+.episode-button{display:flex;align-items:center;gap:12px;width:100%;padding:11px;background:#211f25;border:1px solid transparent;border-radius:8px;color:#e8e4ec;text-align:left;cursor:pointer}
+.episode-button:hover,.episode-button.active{border-color:var(--accent);background:#ed334b16}
+.episode-num{display:grid;place-items:center;min-width:30px;height:30px;background:#302b34;border-radius:6px;font-size:11px;color:#aaa}
+.episode-button.active .episode-num{background:var(--accent);color:white}
+.episode-label{font-size:12px;font-weight:600}
+.player-header{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:15px}
+.player-header .eyebrow{margin-bottom:6px}
+.player-header h3{font-size:18px;margin:0}
+.player-tag{font-size:9px;letter-spacing:1px;color:#c3a0a8;border:1px solid #56313a;padding:6px 8px;border-radius:5px}
+.player-frame{position:relative;width:100%;aspect-ratio:16/9;background:#0c0b0e;border:1px solid #332e37;border-radius:9px;overflow:hidden;display:grid;place-items:center}
+.player-frame iframe,.player-frame video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
+.player-frame video{object-fit:contain}
+.player-placeholder{text-align:center;padding:25px;color:#89838e}
+.play-symbol{display:grid;place-items:center;width:52px;height:52px;border:1px solid #5b3740;color:var(--accent);border-radius:50%;margin:0 auto 12px}
+.player-placeholder p{font-size:12px;margin:0}
+.url-label{display:block;margin:17px 0 8px;font-size:11px;font-weight:700;color:#d6d0dc}
+.url-row{display:flex;gap:8px}
+.url-row input{flex:1;min-width:0;background:#100f12;border:1px solid #38323c;border-radius:8px;padding:12px;color:#fff;outline:0;font-size:12px}
+.url-row input:focus{border-color:var(--accent)}
+.url-row button{border:0;background:var(--accent);color:white;border-radius:8px;padding:0 15px;font-weight:700;font-size:12px;cursor:pointer}
+.player-help{font-size:11px;color:#8f8995;line-height:1.5;margin:10px 0}
+.player-actions{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.secondary-button{border:1px solid #3b3540;background:#211f25;color:#cfc9d3;padding:8px 10px;border-radius:7px;font-size:11px;cursor:pointer}
+#playerStatus{font-size:11px;color:#9eabb0}
+.empty-state{color:var(--muted);padding:30px 0}
+footer{border-top:1px solid var(--line);padding:24px 6vw;display:flex;justify-content:space-between;color:#817b87;font-size:12px}
+@media(max-width:800px){.topbar{padding:0 5vw;gap:20px}nav{display:none}.search-wrap input{width:130px}main{padding:0 5vw}.hero{grid-template-columns:1fr;padding:45px 0}.hero-art{height:220px}.section-heading{align-items:start;gap:18px;flex-direction:column}.episode-layout{grid-template-columns:1fr}.episode-list{grid-template-columns:repeat(2,minmax(0,1fr));max-height:330px}.anime-grid{gap:12px}.poster{height:230px}}
+@media(max-width:480px){.poster{height:190px;padding:14px}.poster-title{font-size:32px;letter-spacing:3px}.poster-kanji{font-size:75px}.card-info{flex-direction:column;padding:13px 2px}.card-info h3{font-size:13px}.search-wrap input{width:95px}.brand{font-size:16px}.episode-list{grid-template-columns:1fr 1fr}.url-row{flex-direction:column}.url-row button{padding:12px}}
+
+[hidden]{display:none!important}
+.player-placeholder code{display:inline-block;max-width:100%;margin-top:12px;padding:7px 10px;background:#100f12;border:1px solid #38323c;border-radius:6px;color:#e8c9cf;font:500 11px ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all}
+.player-placeholder p{max-width:34ch;margin-inline:auto;line-height:1.5}
+.player-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
+.player-controls .secondary-button{padding:9px 13px;font-size:12px;font-weight:600}
+.player-controls .secondary-button:hover:not(:disabled){border-color:var(--accent);color:#fff}
+.player-controls .secondary-button:disabled{opacity:.4;cursor:not-allowed}
+.autonext{margin-left:auto;display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#b9b3be;cursor:pointer}
+.autonext input{accent-color:var(--accent);width:15px;height:15px;margin:0}
+.shortcut-hint{margin:12px 0 0;font-size:10.5px;color:#7d7783;letter-spacing:.2px}
+.source-override{margin-top:18px;border-top:1px solid #29262e;padding-top:14px}
+.source-override summary{cursor:pointer;font-size:12px;font-weight:600;color:#c5bfca;list-style:none}
+.source-override summary::-webkit-details-marker{display:none}
+.source-override summary:before{content:'+';display:inline-block;width:16px;color:var(--accent);font-weight:700}
+.source-override[open] summary:before{content:'–'}
+.source-override summary:hover{color:#fff}
+.source-override .url-label{margin-top:14px}
+.episode-meta{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.episode-title{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.episode-status{font-size:12px;color:#7ddc9a;min-width:14px;text-align:right}
+.episode-button{position:relative;overflow:hidden}
+.episode-button.missing{opacity:.5}
+.episode-button.missing .episode-status{color:#7d7783}
+.episode-progress{position:absolute;left:0;right:0;bottom:0;height:3px;background:#302b34}
+.episode-progress i{display:block;height:100%;background:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(max-width:480px){.autonext{margin-left:0;width:100%}.player-controls .secondary-button{flex:1}}

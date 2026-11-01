@@ -1,0 +1,1 @@
+Name your files e01.mp4 ... e26.mp4 (or e01.webm via episodes.js). Optional subtitles: e01.vtt
